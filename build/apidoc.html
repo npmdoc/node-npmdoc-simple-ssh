@@ -61,12 +61,654 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.simple-ssh">module simple-ssh</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.simple-ssh">
+            function <span class="apidocSignatureSpan"></span>simple-ssh
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh">
+            function <span class="apidocSignatureSpan">simple-ssh.</span>ssh
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">simple-ssh.</span>ssh.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.simple-ssh.ssh">module simple-ssh.ssh</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.ssh">
+            function <span class="apidocSignatureSpan">simple-ssh.</span>ssh
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.simple-ssh.ssh.prototype">module simple-ssh.ssh.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype._queueCommand">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>_queueCommand
+            <span class="apidocSignatureSpan">(index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.count">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>count
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.end">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.exec">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>exec
+            <span class="apidocSignatureSpan">(command, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.off">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>off
+            <span class="apidocSignatureSpan">(event, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.on">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.reset">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>reset
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.simple-ssh.ssh.prototype.start">
+            function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>start
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.simple-ssh" id="apidoc.module.simple-ssh">module simple-ssh</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.simple-ssh" id="apidoc.element.simple-ssh.simple-ssh">
+        function <span class="apidocSignatureSpan"></span>simple-ssh
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simple-ssh = function (config) {
+    config = extend({
+        host: &#x27;&#x27;,
+        port: 22,
+        user: &#x27;&#x27;,
+        pass: &#x27;&#x27;,
+        passphrase: &#x27;&#x27;,
+        timeout: 10000,
+        key:  &#x27;&#x27;,
+        baseDir: &#x27;&#x27;,
+        agent: &#x27;&#x27;,
+        agentForward: &#x27;&#x27;
+    }, config);
+
+    this._c = new Connection();
+    this._commands = [];
+
+    this.host         = config.host;
+    this.port         = config.port;
+    this.user         = config.user;
+    this.pass         = config.pass;
+    this.timeout      = config.timeout;
+    this.key          = config.key;
+    this.passphrase   = config.passphrase;
+    this.baseDir      = config.baseDir;
+    this.agent        = config.agent;
+    this.agentForward = config.agentForward;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh" id="apidoc.element.simple-ssh.ssh">
+        function <span class="apidocSignatureSpan">simple-ssh.</span>ssh
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ssh = function (config) {
+    config = extend({
+        host: &#x27;&#x27;,
+        port: 22,
+        user: &#x27;&#x27;,
+        pass: &#x27;&#x27;,
+        passphrase: &#x27;&#x27;,
+        timeout: 10000,
+        key:  &#x27;&#x27;,
+        baseDir: &#x27;&#x27;,
+        agent: &#x27;&#x27;,
+        agentForward: &#x27;&#x27;
+    }, config);
+
+    this._c = new Connection();
+    this._commands = [];
+
+    this.host         = config.host;
+    this.port         = config.port;
+    this.user         = config.user;
+    this.pass         = config.pass;
+    this.timeout      = config.timeout;
+    this.key          = config.key;
+    this.passphrase   = config.passphrase;
+    this.baseDir      = config.baseDir;
+    this.agent        = config.agent;
+    this.agentForward = config.agentForward;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.simple-ssh.ssh" id="apidoc.module.simple-ssh.ssh">module simple-ssh.ssh</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.ssh" id="apidoc.element.simple-ssh.ssh.ssh">
+        function <span class="apidocSignatureSpan">simple-ssh.</span>ssh
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ssh = function (config) {
+    config = extend({
+        host: &#x27;&#x27;,
+        port: 22,
+        user: &#x27;&#x27;,
+        pass: &#x27;&#x27;,
+        passphrase: &#x27;&#x27;,
+        timeout: 10000,
+        key:  &#x27;&#x27;,
+        baseDir: &#x27;&#x27;,
+        agent: &#x27;&#x27;,
+        agentForward: &#x27;&#x27;
+    }, config);
+
+    this._c = new Connection();
+    this._commands = [];
+
+    this.host         = config.host;
+    this.port         = config.port;
+    this.user         = config.user;
+    this.pass         = config.pass;
+    this.timeout      = config.timeout;
+    this.key          = config.key;
+    this.passphrase   = config.passphrase;
+    this.baseDir      = config.baseDir;
+    this.agent        = config.agent;
+    this.agentForward = config.agentForward;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.simple-ssh.ssh.prototype" id="apidoc.module.simple-ssh.ssh.prototype">module simple-ssh.ssh.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype._queueCommand" id="apidoc.element.simple-ssh.ssh.prototype._queueCommand">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>_queueCommand
+        <span class="apidocSignatureSpan">(index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_queueCommand = function (index) {
+    if (this._commands.length &#x3c;= index) {
+        return;
+    }
+
+    var self = this,
+        command = this._commands[index],
+        cmd = command.cmd;
+
+    // Start by going to the base directory, if set
+    if (this.baseDir.length &#x3e; 0) {
+        cmd = &#x27;cd &#x27; + this.baseDir + &#x27; &#x26;&#x26; &#x27; + cmd;
+    }
+
+    // Execute the command
+    this._c.exec(cmd, { pty: command.pty }, function(err, stream) {
+        command.handlers.start();
+        if (err) {
+            command.handlers.err(err);
+            return;
+        }
+
+        var passwordSent = false,
+            buffer = &#x27;&#x27;,
+            stdout = &#x27;&#x27;,
+            stderr = &#x27;&#x27;;
+
+        stream.stderr.on(&#x27;data&#x27;, function(data) {
+            data = data.toString();
+            stderr += data;
+            command.handlers.err = command.handlers.err || function() {
+                console.log(data);
+            };
+            command.handlers.err(data);
+        });
+
+        stream.on(&#x27;data&#x27;, function(data) {
+            // This will allow us to send in the password if we&#x27;re doing something like `sudo`
+            buffer += (!passwordSent) ? data.toString() : &#x27;&#x27;;
+
+            if (!passwordSent &#x26;&#x26; buffer.substr(-2) === &#x27;: &#x27;) {
+                stream.write(self.pass + &#x27;\n&#x27;);
+                buffer = &#x27;&#x27;;
+                passwordSent = true;
+            } else {
+                data = data.toString();
+                stdout += data;
+                command.handlers.out(data);
+            }
+        });
+
+        stream.on(&#x27;exit&#x27;, function(code) {
+            var numOfCommands = self._commands.length,
+                executeNext = (command.handlers.exit(+code, stdout, stderr) !== false);
+
+            // Queue up the next command
+            if (executeNext &#x26;&#x26; index &#x3c; self._commands.length - 1) {
+                self._queueCommand(index + 1);
+            } else if (!executeNext) {
+                // If the commands have been modified during the last exit, use those
+                if (numOfCommands !== self._commands.length) {
+                    self._commands.splice(0, numOfCommands);
+                    self._queueCommand(0);
+                } else {
+                    self._c.end();
+                }
+            } else if (index === self._commands.length - 1) {
+                self._c.end();
+            }
+        });
+        if (command.in) stream.end(command.in);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.count" id="apidoc.element.simple-ssh.ssh.prototype.count">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>count
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function () {
+    return this._commands.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+ssh
+.exec(&#x27;exit 1&#x27;)
+.exec(&#x27;exit 2&#x27;)
+.exec(&#x27;exit 3&#x27;);
+
+console.log(ssh.<span class="apidocCodeKeywordSpan">count</span>()); // 3
+```
+
+* Running a command using `sudo`
+
+```javascript
+ssh.exec(&#x27;sudo echo &#x22;Pseudo-sudo&#x22;&#x27;, {
+pty: true,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.end" id="apidoc.element.simple-ssh.ssh.prototype.end">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+    this._c.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* Listening for additional events
+
+```javascript
+ssh.on(&#x27;error&#x27;, function(err) {
+    console.log(&#x27;Oops, something went wrong.&#x27;);
+    console.log(err);
+    ssh.<span class="apidocCodeKeywordSpan">end</span>();
+});
+```
+
+* Event handlers can be chained as well
+
+```javascript
+ssh
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.exec" id="apidoc.element.simple-ssh.ssh.prototype.exec">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>exec
+        <span class="apidocSignatureSpan">(command, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (command, options) {
+    options = extend({
+        args: null,
+        start: function(){},
+        in:   null,
+        out:  function(){},
+        err:  function(){},
+        exit: function(){},
+        pty:  false
+    }, options);
+
+    // Apply additional command line arguments
+    if (options.args !== null) {
+        command += &#x27; &#x27; + options.args.join(&#x27; &#x27;);
+    }
+
+    this._commands.push({
+        cmd: command,
+        in:   options.in,
+        handlers: {
+            start: options.start,
+            out:  options.out,
+            err:  options.err,
+            exit: options.exit
+        },
+        pty: options.pty
+    });
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var ssh = new SSH({
+    host: &#x27;localhost&#x27;,
+    user: &#x27;username&#x27;,
+    pass: &#x27;password&#x27;
+});
+
+ssh.<span class="apidocCodeKeywordSpan">exec</span>(&#x27;echo $PATH&#x27;, {
+    out: function(stdout) {
+        console.log(stdout);
+    }
+}).start();
+
+/*** Using the `args` options instead ***/
+ssh.exec(&#x27;echo&#x27;, {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.off" id="apidoc.element.simple-ssh.ssh.prototype.off">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>off
+        <span class="apidocSignatureSpan">(event, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (event, callback) {
+    this._c.off(event, callback);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.on" id="apidoc.element.simple-ssh.ssh.prototype.on">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (event, callback) {
+    this._c.on(event, callback);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Echos out any messages the user sent in if 10 or more have been queued
+var msgInterval = setInterval(function() {
+if (ssh.count() &#x3e; 10) {
+    ssh.start();
+}
+}, 1000);
+
+socket.<span class="apidocCodeKeywordSpan">on</span>(&#x27;message&#x27;, function(msg) {
+// If a &#x27;reset&#x27; message is received, clear previous messages
+if (msg === &#x27;reset&#x27;) {
+    ssh.reset(function(err) {
+        if (err) {
+            throw err;
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.reset" id="apidoc.element.simple-ssh.ssh.prototype.reset">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>reset
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (cb) {
+    cb = cb || function(){};
+    if (this._c._sock !== undefined &#x26;&#x26; this._c._state !== &#x27;closed&#x27;) {
+        var self = this;
+        this._c.on(&#x27;close&#x27;, function(err) {
+            self._c = new Connection();
+            self._commands = [];
+            cb(err);
+        });
+        this._c.end();
+    } else {
+        this._c = new Connection();
+        this._commands = [];
+        cb();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ssh.start();
+}
+}, 1000);
+
+socket.on(&#x27;message&#x27;, function(msg) {
+// If a &#x27;reset&#x27; message is received, clear previous messages
+if (msg === &#x27;reset&#x27;) {
+    ssh.<span class="apidocCodeKeywordSpan">reset</span>(function(err) {
+        if (err) {
+            throw err;
+        }
+
+        ssh.exec(&#x27;echo &#x22;reset&#x22;&#x27;);
+    });
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.simple-ssh.ssh.prototype.start" id="apidoc.element.simple-ssh.ssh.prototype.start">
+        function <span class="apidocSignatureSpan">simple-ssh.ssh.prototype.</span>start
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (options) {
+    options = extend({
+        success: function(){},
+        fail: function(){}
+    }, options);
+    var self = this;
+
+    self._c.on(&#x27;error&#x27;, options.fail);
+
+    self._c.on(&#x27;ready&#x27;, function() {
+        self._c.removeListener(&#x27;error&#x27;, options.fail);
+        options.success();
+
+        if (self._commands.length &#x3e; 0) {
+            self._queueCommand(0);
+        } else {
+            self._c.end();
+        }
+    });
+    if (self.pass &#x26;&#x26; !self.key) {
+        self._c.connect({
+            host: self.host,
+            port: self.port || 22,
+            username: self.user,
+            password: self.pass,
+            readyTimeout: self.timeout
+        });
+      } else if (!self.pass &#x26;&#x26; self.key) {
+        if(self.passphrase){
+          self._c.connect({
+            host: self.host,
+            port: self.port || 22,
+            username: self.user,
+            privateKey: self.key,
+            passphrase: self.passphrase,
+            readyTimeout: self.timeout
+          });
+        }
+        else {
+          self._c.connect({
+            host: self.host,
+            port: self.port || 22,
+            username: self.user,
+            privateKey: self.key,
+            readyTimeout: self.timeout
+          });
+        }
+      } else if ((self.passphrase || self.pass) &#x26;&#x26; self.key) {
+            try {
+                self._c.connect({
+                    host: self.host,
+                    port: self.port || 22,
+                    username: self.user,
+                    privateKey: self.key,
+                    passphrase: self.passphrase || self.pass,
+                    readyTimeout: self.timeout
+                });
+            } catch (err) {
+                self._c.emit(&#x27;error&#x27;, new Error(&#x27;Incorrect passphrase: &#x27; + err.toString()));
+
+                return this;
+            }
+    } else {
+        self._c.connect({
+            host: self.host,
+            port: self.port || 22,
+            username: self.user,
+            agent: self.agent,
+            agentForward: self.agentForward,
+            readyTimeout: self.timeout
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+pass: &#x27;password&#x27;
+});
+
+ssh.exec(&#x27;echo $PATH&#x27;, {
+out: function(stdout) {
+    console.log(stdout);
+}
+}).<span class="apidocCodeKeywordSpan">start</span>();
+
+/*** Using the `args` options instead ***/
+ssh.exec(&#x27;echo&#x27;, {
+args: [&#x27;$PATH&#x27;],
+out: function(stdout) {
+    console.log(stdout);
+}
+...</pre></li>
+    </ul>
+
 
 </div>
 
