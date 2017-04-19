@@ -1,9 +1,14 @@
-# api documentation for  [simple-ssh (v0.9.0)](https://github.com/MCluck90/simple-ssh#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-simple-ssh.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-simple-ssh) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-simple-ssh.svg)](https://travis-ci.org/npmdoc/node-npmdoc-simple-ssh)
+# npmdoc-simple-ssh
+
+#### api documentation for  [simple-ssh (v0.9.0)](https://github.com/MCluck90/simple-ssh#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-simple-ssh.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-simple-ssh) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-simple-ssh.svg)](https://travis-ci.org/npmdoc/node-npmdoc-simple-ssh)
+
 #### A wrapper for ssh2 to make it easier to perform commands over SSH
 
-[![NPM](https://nodei.co/npm/simple-ssh.png?downloads=true)](https://www.npmjs.com/package/simple-ssh)
+[![NPM](https://nodei.co/npm/simple-ssh.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/simple-ssh)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-simple-ssh_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-simple-ssh/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-simple-ssh/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Mike Cluck",
-        "email": "mcluck90@gmail.com"
+        "name": "Mike Cluck"
     },
     "bugs": {
         "url": "https://github.com/MCluck90/simple-ssh/issues"
@@ -55,13 +59,11 @@
     "main": "./lib/ssh.js",
     "maintainers": [
         {
-            "name": "mcluck",
-            "email": "mcluck90@gmail.com"
+            "name": "mcluck"
         }
     ],
     "name": "simple-ssh",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/MCluck90/simple-ssh.git"
@@ -70,16 +72,6 @@
     "version": "0.9.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module simple-ssh](#apidoc.module.simple-ssh)
-
-
-
-# <a name="apidoc.module.simple-ssh"></a>[module simple-ssh](#apidoc.module.simple-ssh)
 
 
 
